@@ -3,121 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Executor Hub By Rafin</title>
+    <title>Executor Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 20px;
             background-color: #000;
             color: #888;
             font-family: 'Fredoka One', cursive;
-            overflow: hidden;
-            cursor: url('https://img.icons8.com/ios-filled/50/888888/plus-math.png'), auto;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
             text-align: center;
         }
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 1.5rem;
-            color: #888; 
-            text-decoration: none;
-            background-color: transparent;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .button:hover {
-            color: #fff;
-        }
-
-        .content-box {
-            background-color: #D3D3D3;
-            padding: 20px;
-            border-radius: 10px;
+        .executor-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px auto;
-            width: 400px;
-            z-index: 1;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .executor-list {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
+        .executor {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            color: #fff;
+            text-align: center;
         }
 
-        .executor-list li {
+        .executor img {
+            width: 100px;
+            height: 100px;
             margin-bottom: 10px;
-            font-size: 1.5rem;
         }
 
-        .executor-link {
-            text-decoration: none;
-            color: #007bff;
+        .executor button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
-        .executor-link:hover {
-            color: #0056b3;
+        .executor button:hover {
+            background-color: #0056b3;
+        }
+
+        .offline {
+            background-color: #888;
+            cursor: not-allowed;
         }
 
         .link-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 1.2rem;
-            color: white;
             background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
             border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
             text-decoration: none;
-            transition: background-color 0.3s;
+            font-size: 16px;
         }
 
         .link-button:hover {
             background-color: #0056b3;
         }
 
+        .search-bar {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+
         footer {
-            margin-top: 20px;
+            margin-top: 40px;
             color: #ffffff;
             text-align: center;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>Executor Hub</h1>
-        <p style="text-align: center; font-size: 2rem;">Choose your preferred executor:</p>
-        <div class="content-box">
-            <ul class="executor-list">
-                <li><a href="https://www.mediafire.com/file/nh6rr6dezk7tpob/Delta-2.640.730.apk/file" target="_blank" class="executor-link">Delta</a> - Status: ✔</li>
-                <li><a href="https://www.mediafire.com/file/tdnjfjwmuwyykdi/Cubix-2.641.737.apk/file" target="_blank" class="executor-link">Cubix</a> - Status: ✔</li>
-                <li>Fluxus - Status: ❌</li>
-                <li>Evon - Status: ❌</li>
-                <li>Cryptic - Status: ❌</li>
-                <li>ArceusX - Status: ❌</li>
-                <li>Codex - Status: ❌</li>
-                <li>TRIGON - Status: ❌</li>
-            </ul>
+    <h1>Executor Hub</h1>
+    <input type="text" id="searchBar" class="search-bar" placeholder="Search Executors..." onkeyup="filterExecutors()">
+    <div class="executor-container" id="executorContainer">
+        <div class="executor">
+            <img src="./exploits-imgs/delta.png" alt="Delta">
+            <h3>Delta</h3>
+            <p>Status: <span style="color: lime;">Working</span></p>
+            <button onclick="window.open('https://www.mediafire.com/file/nh6rr6dezk7tpob/Delta-2.640.730.apk/file')">Download</button>
         </div>
-        <div>
-            <a href="https://discord.com/invite/VVVfmhsdFM" target="_blank" class="link-button">Join Our Discord Server</a>
-            <a href="https://youtube.com/@rafinexploits?si=a7W6Ksq1nkhpt5lz" target="_blank" class="link-button">Visit Our YouTube Channel</a>
+
+        <div class="executor">
+            <img src="./exploits-imgs/fluxus.png" alt="Fluxus">
+            <h3>Fluxus</h3>
+            <p>Status: <span style="color: lime;">Working</span></p>
+            <button onclick="window.open('https://mega.nz/file/iTwAXaDQ#kuShntQYHd7LlUjdYcz8qsYdFShWuzRWocbMimNmy8k')">Download</button>
         </div>
-        <footer>
-            © 2024 All Rights Reserved | Made By imrafin_
-        </footer>
+
+        <div class="executor">
+            <img src="./exploits-imgs/cubix.png" alt="Cubix">
+            <h3>Cubix</h3>
+            <p>Status: <span style="color: lime;">Working</span></p>
+            <button onclick="window.open('https://www.mediafire.com/file/tdnjfjwmuwyykdi/Cubix-2.641.737.apk/file')">Download</button>
+        </div>
+
+        <div class="executor">
+            <img src="/exploits-imgs/codex.png" alt="CodeX">
+            <h3>CodeX</h3>
+            <p>Status: <span style="color: red;">Offline</span></p>
+            <button class="offline" disabled>Download</button>
+        </div>
+
+        <div class="executor">
+            <img src="./exploits-imgs/arceus-x-neo.png" alt="Arceus X Neo">
+            <h3>Arceus X Neo</h3>
+            <p>Status: <span style="color: red;">Offline</span></p>
+            <button class="offline" disabled>Download</button>
+        </div>
+
+        <div class="executor">
+            <img src="/exploits-imgs/evon.png" alt="Evon">
+            <h3>Evon</h3>
+            <p>Status: <span style="color: red;">Offline</span></p>
+            <button class="offline" disabled>Download</button>
+        </div>
+
+        <div class="executor">
+            <img src="./exploits-imgs/trigon.png" alt="Trigon">
+            <h3>Trigon</h3>
+            <p>Status: <span style="color: red;">Offline</span></p>
+            <button class="offline" disabled>Download</button>
+        </div>
     </div>
+
+    <div>
+        <a href="https://discord.com/invite/VVVfmhsdFM" class="link-button">Join Our Discord Server</a>
+        <a href="https://youtube.com/@rafinexploits?si=a7W6Ksq1nkhpt5lz" class="link-button">Visit Our YouTube Channel</a>
+    </div>
+
+    <footer>
+        <p>© ExecutorHub 2024 All Rights Reserved | Made by imrafin_</p>
+    </footer>
+
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                event.preventDefault();
+            }
+        });
+
+        function filterExecutors() {
+            const searchValue = document.getElementById('searchBar').value.toLowerCase();
+            const executors = document.getElementsByClassName('executor');
+
+            for (let i = 0; i < executors.length; i++) {
+                const executorName = executors[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                if (executorName.includes(searchValue)) {
+                    executors[i].style.display = '';
+                } else {
+                    executors[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
 </body>
-      </html>
+</html>
